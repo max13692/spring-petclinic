@@ -34,6 +34,7 @@ pipeline {
       steps {
         withSonarQubeEnv(installationName: 'My SonarQube Server') {
           echo 'Running SonarQube analysis...'
+          sh 'mvn clean package' 
           sh 'mvn sonar:sonar'
         }
       }
