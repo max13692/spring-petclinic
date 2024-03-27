@@ -27,6 +27,7 @@ pipeline {
       steps {
         echo 'Packaging the project into an artifact...'
         sh 'mvn package -DskipTests'
+        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
       }
     }
     stage('SonarQube Analysis') {
