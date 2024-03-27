@@ -32,7 +32,7 @@ pipeline {
     stage('SonarQube Analysis') {
       agent any
       steps {
-        withSonarQubeEnv(installationName: 'My SonarQube Server', credentialsId: 'test-cred') {
+        withSonarQubeEnv(installationName: 'My SonarQube Server') {
           echo 'Running SonarQube analysis...'
           sh 'mvn sonar:sonar'
         }
