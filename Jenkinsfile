@@ -40,12 +40,5 @@ pipeline {
         }
       }
     }
-    stage('Deploy') {
-    agent any
-    steps {
-        echo 'Deploying the application within the current container...'
-        sh 'nohup java -jar *.jar --server.port=9090'
-    }
-    }
   }
 }
