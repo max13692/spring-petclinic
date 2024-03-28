@@ -44,7 +44,7 @@ pipeline {
     agent any
     steps {
         echo 'Deploying the application within the current container...'
-        sh 'nohup java -jar **/target/*.jar --server.port=9090'
+        sh 'nohup java -jar *.jar --server.port=9090'
     }
     }
   }
